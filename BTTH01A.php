@@ -3,7 +3,6 @@
 
     $arrs = [2, 5, 6, 9, 2, 5, 6, 12, 5];
     $sum = array_sum($arrs);
-    echo "kết quả";
     echo "Tổng các phần tử = 2+5+6+9+2+5+6+12+5 " . "= $sum " . "<br>";
     
     $product = array_product($arrs);
