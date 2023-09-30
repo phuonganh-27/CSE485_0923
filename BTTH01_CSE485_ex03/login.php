@@ -52,24 +52,31 @@
           </form>
           </div>
     </div>
-          <?php
-          if(isset($_POST["submit"])){
-            $user=$_POST["txt_username"];
-            $pass=$_POST["txt_password"];
-            $sql = "SELECT * FROM users WHERE username = '$user' AND password = '$pass'" ;
-            $result = mysqli_query($conn,$sql);
-            if($result === FALSE)   {
-              echo "Lỗi truy vấn SQL: " . mysqli_error($conn);
-          } else {
-              // Kiểm tra kết quả trả về
-              if(mysqli_num_rows($result) > 0) {
-                  echo "Đăng nhập thành công";
-              } else {
-                  echo "Đăng nhập thất bại";
-              }
-          }
-          }
-          ?>
+    <?php
+try {
+    if (isset($_POST["submit"])) {
+        $user = $_POST["txt_username"];
+        $pass = $_POST["txt_password"];
+        // Bước 2: Thực hiện truy vấn sử dụng Prepared Statement
+        $sql = "SELECT * FROM users WHERE username = :user AND password = :pass";
+        $stmt = $conn->prepare($sql);
+        $stmt->bindParam(':user', $user);
+        $stmt->bindParam(':pass', $pass);
+        $stmt->execute();
+
+        // Bước 3: Xử lý kết quả
+        if ($stmt->rowCount() > 0) {
+            echo "Đăng nhập thành công";
+        } else {
+            echo "Đăng nhập thất bại";
+        }
+    }
+} catch (PDOException $e) {
+    echo "Lỗi: " . $e->getMessage();
+}
+?>
+
+          
           <div class="border-top d-flex justify-content-center pt-3 fw-bold">
             <p>TLU'S MUSIC GARDEN</p>
           </div>
