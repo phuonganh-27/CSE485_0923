@@ -27,9 +27,9 @@ if (isset($_POST["submit"])) {
         $updateStmt->bindParam(':email', $email);
         $updateStmt->execute();
 
-        echo "Xác thực thành công!";
+        echo "Authentication success";
       } else {
-        echo "Mã xác thực không đúng.";
+        echo "Authentication failed";
       }
     }
   }
@@ -38,13 +38,13 @@ if (isset($_POST["submit"])) {
 <html>
 
 <head>
-  <title>Contact</title>
+  <title>Authentication</title>
   <meta charset="UTF-8">
   
 </head>
 
 <body>
-  <h1>Contact</h1>
+  <h1>Authentication</h1>
 
   <form method="post" action="">
 

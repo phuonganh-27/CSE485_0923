@@ -14,14 +14,14 @@ class HomeController
     {
         include "services/CategoryService.php";
         $categoryService = new CategoryService();
-        $categories = $categoryService->getAllCategory();
+        $categorys = $categoryService->getAllCategory();
         include "views/home/category.php";
     }
     public function addsong()
     {
         include "services/CategoryService.php";
         include "services/SongService.php";
-        include "views/home/add.php";
+        include "views/home/add-song.php";
         if (isset($_POST["submit"])) {
             // Lấy dữ liệu từ biểu mẫu
             $id = $_POST["idsong"];

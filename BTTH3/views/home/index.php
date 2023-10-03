@@ -11,12 +11,12 @@
 
 <body>
     <a href="http://localhost/PHP/CSE485_0923/BTTH3/index.php?c=home&a=addsong"><button class="btn btn-success"> Add song</button></a>
-    <a href="http://localhost/BTTH3/Category-index.php?c=home&a=index"><button class="btn btn-success">Category</button></a>
+    <a href="http://localhost/PHP/CSE485_0923/BTTH3/index.php?c=home&a=showcategory"><button class="btn btn-success">Category</button></a>
     <div>
         <table class="table">
             <thead>
                 <th scope="col">ID</th>
-                <th scope="col">Name song</th>
+                <th scope="col">Song title</th>
                 <th scope="col">Name Singer</th>
                 <th scope="col">ID Category</th>
                 <th scope="col">Edit</th>
