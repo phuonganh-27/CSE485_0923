@@ -15,7 +15,7 @@
         <div class="d-flex align-items-center justify-content-between">
           <img src="img/logo.png" alt="" />
           <h6 class="mx-3">Trang chủ</h6>
-          <h6>Đăng nhập</h6>
+          <a href="login.php" class="text-decoration-none text-black"><h6>Đăng nhập</h6></a>
         </div>
         <div>
           <input type="text" placeholder="Nội dung tìm kiếm" />
@@ -27,10 +27,10 @@
     <div class="content my-3">
       <p class="text-center text-info">TOP BÀI HÁT ĐƯỢC YÊU THÍCH</p>
       <div class="row">
-        <div class="col-3 text-center text-info my-2">
+        <div class="col-3 text-center my-2">
           <div class="border">
             <img src="img/anh2trangchu.png" class="w-100" alt="" />
-            <p>Cây lá và gió</p>
+            <a href="detail.php" class="text-decoration-none text-info"><p>Cây lá và gió</p></a> 
           </div>
         </div>
         <div class="col-3 text-center text-info my-2">

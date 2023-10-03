@@ -10,7 +10,7 @@
     <div class="border pb-4">
         <div class="header border-bottom pb-2 shadow py-3 d-flex justify-content-start ps-3">
             <p class="pe-3">Administration</p>
-            <p class="pe-3">Trang chủ</p>
+            <p class="pe-3 fw-bold">Trang chủ</p>
             <p class="pe-3">Trang ngoài</p>
             <p class="pe-3">Thể loại</p>
             <p class="pe-3">Tác giả</p>
