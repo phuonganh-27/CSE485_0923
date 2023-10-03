@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <a href="http://localhost/BTTH3_phpmvc/index.php?c=home&a=addsong"><button class="btn btn-success"> Add song</button></a>
+    <a href="http://localhost/BTTH3/index.php?c=home&a=addsong"><button class="btn btn-success"> Add song</button></a>
     <div class="container">
         <table class="table">
             <thead>
