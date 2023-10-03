@@ -9,7 +9,7 @@
             <td><input type="text" name="songtt"></td>
         </tr>
         <tr>
-            <td>singer</td>
+            <td>Singer</td>
             <td><input type="text" name="singer"></td>
         </tr>
         <tr>

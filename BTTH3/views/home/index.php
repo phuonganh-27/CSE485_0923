@@ -6,32 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Homepage</title>
     <link rel="stylesheet" href="./bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 </head>
 
 <body>
-    <a href="http://localhost/BTTH3/index.php?c=home&a=addsong"><button class="btn btn-success"> Add song</button></a>
-    <div class="container">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Category</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                foreach ($categorys as $ctg) { ?>
-                    <tr>
-                        <td scope="row"><?php echo $ctg->getId(); ?></td>
-                        <td><?php echo $ctg->getTenTheLoai(); ?></td>
-                    </tr>
-                <?php }
-                ?>
-
-            </tbody>
-        </table>
-    </div>
-
+    <a href="http://localhost/PHP/CSE485_0923/BTTH3/index.php?c=home&a=addsong"><button class="btn btn-success"> Add song</button></a>
+    <a href="http://localhost/BTTH3/Category-index.php?c=home&a=index"><button class="btn btn-success">Category</button></a>
     <div>
         <table class="table">
             <thead>
@@ -39,6 +19,9 @@
                 <th scope="col">Name song</th>
                 <th scope="col">Name Singer</th>
                 <th scope="col">ID Category</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+
             </thead>
             <tbody>
                 <?php
@@ -48,6 +31,8 @@
                         <td><?php echo $song->getTenBaiHat(); ?></td>
                         <td><?php echo $song->getCaSi(); ?></td>
                         <td><?php echo $song->getIdTheLoai(); ?></td>
+                        <td><a href=""><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a href=""><i class="bi bi-trash3-fill"></i></a></td>
                     </tr>
                 <?php } ?>
             </tbody>

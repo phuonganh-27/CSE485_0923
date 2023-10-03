@@ -3,13 +3,19 @@ class HomeController
 {
     public function index()
     {
-        include "services/CategoryService.php";
         include "services/SongService.php";
-        $ctgServive = new CategoryService();
-        $categorys = $ctgServive->getAllCategory();
         $songService = new SongService();
         $songs = $songService->getAllSong();
         include "views/home/index.php";
+    }
+    //function show category
+
+    public function showcategory()
+    {
+        include "services/CategoryService.php";
+        $categoryService = new CategoryService();
+        $categories = $categoryService->getAllCategory();
+        include "views/home/category.php";
     }
     public function addsong()
     {
@@ -23,8 +29,22 @@ class HomeController
             $caSi = $_POST["singer"];
             $idTheLoai = $_POST["idcategory"];
             $songService = new SongService();
+            $songService->addSong($id, $tenBaiHat, $caSi, $idTheLoai);
 
-            $songs = $songService->addSong($id, $tenBaiHat, $caSi, $idTheLoai);
+
+        }
+        
+    }
+    public function deletesong()
+    {
+        include "services/SongService.php";
+        $songService = new SongService();
+        $songs = $songService->getAllSong();
+        include "views/home/delete.php";
+        if (isset($_POST["submit"])) {
+            // Lấy dữ liệu từ biểu mẫu
+            $id = $_POST["idsong"];
+            $songService->deleteSong($id);
         }
     }
 }
