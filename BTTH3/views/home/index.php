@@ -10,8 +10,9 @@
 </head>
 
 <body>
-    <a href="http://localhost/PHP/CSE485_0923/BTTH3/index.php?c=home&a=addsong"><button class="btn btn-success"> Add song</button></a>
-    <a href="http://localhost/PHP/CSE485_0923/BTTH3/index.php?c=home&a=showcategory"><button class="btn btn-success">Category</button></a>
+    <p class="fw-bold fs-4 d-flex justify-content-center mt-2">Song</p>
+    <a href="http://localhost/PHP/CSE485_0923/BTTH3/index.php?c=home&a=addsong"><button class="btn btn-success mb-3"> Add song</button></a>
+    <a href="http://localhost/PHP/CSE485_0923/BTTH3/index.php?c=home&a=showcategory"><button class="btn btn-success mb-3">Category</button></a>
     <div>
         <table class="table">
             <thead>
@@ -31,7 +32,8 @@
                         <td><?php echo $song->getTenBaiHat(); ?></td>
                         <td><?php echo $song->getCaSi(); ?></td>
                         <td><?php echo $song->getIdTheLoai(); ?></td>
-                        <td><a href=""><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a href="http://localhost/PHP/CSE485_0923/BTTH3/index.php?c=home&a=editsong&idsong=<?php echo $song->getid();?>"><i class="bi bi-pencil-square"></i></a></td>
+                        
                         <td><a href=""><i class="bi bi-trash3-fill"></i></a></td>
                     </tr>
                 <?php } ?>

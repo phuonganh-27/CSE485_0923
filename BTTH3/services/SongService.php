@@ -24,6 +24,17 @@ class SongService
         $this->listOfSong[] = $song;
         return $this->listOfSong;
     }
+    public function editSong($id, $tenBaiHat, $caSi, $idTheLoai)
+    {
+        foreach ($this->listOfSong as $key => $value) {
+            if ($value->getId() == $id) {
+                $this->listOfSong[$key]->setTenBaiHat($tenBaiHat);
+                $this->listOfSong[$key]->setCaSi($caSi);
+                $this->listOfSong[$key]->setIdTheLoai($idTheLoai);
+            }
+        }
+        return $this->listOfSong;
+    }
     public function deleteSong($id)
     {
         foreach ($this->listOfSong as $key => $value) {

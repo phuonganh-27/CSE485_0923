@@ -10,7 +10,7 @@
 <body>
 <div>
     <p class="fw-bold fs-4 d-flex justify-content-center mt-2">Category</p>
-    <a href=""><button class="btn btn-success">Add Category</button></a>
+    <a href="http://localhost/PHP/CSE485_0923/BTTH3/index.php?c=home&a=addcategory"><button class="btn btn-success mb-3">Add Category</button></a>
         <table class="table">
             <thead>
                 <th scope="col">ID</th>

@@ -16,4 +16,9 @@ class CategoryService{
         return $this->listOfCategory;
     }
 
+    public function addCategory($id, $tenTheLoai){
+        $category = new Category($id, $tenTheLoai);
+        $this->listOfCategory[] = $category;
+        return $this->listOfCategory;
+    }
 }
