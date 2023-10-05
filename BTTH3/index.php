@@ -1,4 +1,6 @@
 <?php 
+include "config/database.php";
+
 $controller = isset($_GET['c'])?$_GET['c']:'home';
 $action = isset($_GET['a'])?$_GET['a']:'index';
 

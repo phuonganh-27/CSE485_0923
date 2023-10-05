@@ -10,6 +10,8 @@
 <body>
 <div>
     <p class="fw-bold fs-4 d-flex justify-content-center mt-2">Category</p>
+    <a href="http://localhost/PHP/CSE485_0923/BTTH3/index.php?c=home&a=index"><button class="btn btn-success mb-3">Song</button></a>
+    
     <a href="http://localhost/PHP/CSE485_0923/BTTH3/index.php?c=home&a=addcategory"><button class="btn btn-success mb-3">Add Category</button></a>
         <table class="table">
             <thead>
@@ -24,8 +26,8 @@
                     <tr>
                         <td><?php echo $ctg->getid(); ?></td>
                         <td><?php echo $ctg->getTenTheLoai(); ?></td>
-                        <td><a href=""><i class="bi bi-pencil-square"></i></a></td>
-                        <td><a href=""><i class="bi bi-trash3-fill"></i></a></td>
+                        <td><a href="http://localhost/PHP/CSE485_0923/BTTH3/index.php?c=home&a=editcategory&idcategory=<?php echo $ctg->getid();?>"><i class="bi bi-pencil-square"></i></a></td>
+                        <td><a href="http://localhost/PHP/CSE485_0923/BTTH3/index.php?c=home&a=deletecategory&idcategory=<?php echo $ctg->getid();?>"><i class="bi bi-trash3-fill"></i></a></td>
                     </tr>
                 <?php } ?>
             </tbody>

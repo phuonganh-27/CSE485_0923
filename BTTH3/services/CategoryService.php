@@ -3,22 +3,46 @@ include "models/Category.php";
 
 class CategoryService{
     private $listOfCategory;
-    public function __construct(){
-        $ctg01 = new Category('101', 'Nhac Tru tinh');
-        $ctg02 = new Category('111', 'Nhac Rap');
-        $ctg03 = new Category('121', 'Nhac trẻ');
-        $this->listOfCategory[] = $ctg01;
-        $this->listOfCategory[] = $ctg02;
-        $this->listOfCategory[] = $ctg03;
-
-    }
     public function getAllCategory(){
+        
+        $sql = "SELECT * FROM category";
+        $stmt = $GLOBALS['conn']->prepare($sql);
+        $stmt->execute();
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        foreach ($result as $key => $value) {
+            $category = new Category($value['idTheLoai'], $value['tenTheLoai']);
+            $this->listOfCategory[] = $category;
+        }
         return $this->listOfCategory;
     }
-
+    public function getCategory($id){
+        $sql = "SELECT * FROM category WHERE idTheLoai = :id";
+        $stmt = $GLOBALS['conn']->prepare($sql);
+        $stmt->bindParam(':id', $id);
+        $stmt->execute();
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        $category = new Category($result['idTheLoai'], $result['tenTheLoai']);
+        return $category;
+    }
+    public function editCategory($id, $tenTheLoai){
+        $sql = "UPDATE category SET tenTheLoai = :tenTheLoai WHERE idTheLoai = :id";
+        $stmt = $GLOBALS['conn']->prepare($sql);
+        $stmt->bindParam(':id', $id);
+        $stmt->bindParam(':tenTheLoai', $tenTheLoai);
+        $stmt->execute();
+    }
+    public function deleteCategory($id){
+        $sql = "DELETE FROM category WHERE idTheLoai = :id";
+        $stmt = $GLOBALS['conn']->prepare($sql);
+        $stmt->bindParam(':id', $id);
+        $stmt->execute();
+    }
     public function addCategory($id, $tenTheLoai){
-        $category = new Category($id, $tenTheLoai);
-        $this->listOfCategory[] = $category;
-        return $this->listOfCategory;
+        $sql = "INSERT INTO category (idTheLoai, tenTheLoai) VALUES (:id, :tenTheLoai)";
+        $stmt = $GLOBALS['conn']->prepare($sql);
+        $stmt->bindParam(':id', $id);
+        $stmt->bindParam(':tenTheLoai', $tenTheLoai);
+        $stmt->execute();
+
     }
 }

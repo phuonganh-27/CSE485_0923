@@ -34,7 +34,7 @@
                         <td><?php echo $song->getIdTheLoai(); ?></td>
                         <td><a href="http://localhost/PHP/CSE485_0923/BTTH3/index.php?c=home&a=editsong&idsong=<?php echo $song->getid();?>"><i class="bi bi-pencil-square"></i></a></td>
                         
-                        <td><a href=""><i class="bi bi-trash3-fill"></i></a></td>
+                        <td><a href="http://localhost/PHP/CSE485_0923/BTTH3/index.php?c=home&a=deletesong&idsong=<?php echo $song->getid();?>"><i class="bi bi-trash3-fill"></i></a></td>
                     </tr>
                 <?php } ?>
             </tbody>

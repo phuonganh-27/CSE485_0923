@@ -9,15 +9,16 @@
             </tr>
             <tr>
                 <td>Song title</td>
-                <td><input class="ms-5 mb-2" type="text" name="songtt" value="<?php echo $songs->getTenBaiHat(); ?>"></td>
+
+                <td><input class="ms-5 mb-2" type="text" name="songtt" value="<?php echo $song->getTenBaiHat(); ?>"></td>
             </tr>
             <tr>
                 <td>Singer</td>
-                <td><input class="ms-5 mb-2" type="text" name="singer" value="<?php echo $songs->getCaSi(); ?>"></td>
+                <td><input class="ms-5 mb-2" type="text" name="singer" value="<?php echo $song->getCaSi(); ?>"></td>
             </tr>
             <tr>
                 <td>Id Category</td>
-                <td><input class="ms-5 mb-2" type="text" name="idcategory" value="<?php echo $songs->getIdTheLoai(); ?>"></td>
+                <td><input class="ms-5 mb-2" type="text" name="idcategory" value="<?php echo $song->getIdTheLoai(); ?>"></td>
             </tr>
             <tr>
                 <td><input class="mt-4 bg-success rounded-1 border-0 w-100 text-white  " type="submit" value="Edit" name="submit"></td>
