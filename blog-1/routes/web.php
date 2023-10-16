@@ -16,11 +16,19 @@ use App\Http\Controllers\CategoryController;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('welcome');
 });
 
-Route::get("posts", [PostController::class, "getAllPosts"]);
+// Route::get("posts", [PostController::class, "getAllPosts"]);
 
 Route::resource("categories", CategoryController::class);
 
-Route::get("categories/{id}", [CategoryController::class, "show"]);
+// Route::get("categories/{id}", [CategoryController::class, "show"]);
+
+// Route::post('/welcom', [PostController::class, "welcom"])->name("welcom.welcom");
+// Route::post('/welcom', [PostController::class, "save"])->name("welcom.save");
+
+// Route::post('/welcom/edit', [PostController::class, "edit"])->name("welcom.welcom");
+// Route::post('/welcom/edit', [PostController::class, "save"])->name("welcom.save");
+
+// Route::get('/categories/create', [CategoryController::class, 'create'])->name('categories.create');
