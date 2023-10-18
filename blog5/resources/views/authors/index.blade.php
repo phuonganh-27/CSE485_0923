@@ -6,10 +6,13 @@
         <div class="card">
             <div class="card-header ">
                 <div class="row ">
-                    <div class="col-md-10 ">
+                    <div class="col-md-8 ">
                         <h3>Authors List</h3>
                     </div>
-                    <div class="col-md-2 text-right">
+                    <div class="col-md-1 text-right">
+                        <a href="{{ route('books.index') }}" class="btn btn-success">Book</a>
+                    </div>
+                    <div class="col-md-3 text-right">
                         <a href="{{ route('authors.create') }}" class="btn btn-warning">Add a new Author</a>
                     </div>
                 </div>
@@ -36,7 +39,7 @@
                                 <td>{{ $author->name }}</td>
                                 <td>
                                     <form action="{{ route('authors.destroy', $author->id) }}" method="POST" class="d-inline">
-                                    <a href="{{ route('authors.edit', $author->id) }}" class="btn btn-primary">Edit</a>
+                                    <a href="{{ route('authors.edit', $author->id) }}" class="btn btn-success">Edit</a>
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this author?')">Delete</button>

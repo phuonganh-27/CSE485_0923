@@ -6,10 +6,13 @@
         <div class="card">
             <div class="card-header">
                 <div class="row">
-                    <div class="col-md-10">
+                    <div class="col-md-8">
                         <h3>Books List</h3>
                     </div>
-                    <div class="col-md-2 text-right">
+                    <div class="col-md-1 text-right">
+                        <a href="{{ route('authors.index') }}" class="btn btn-success">Author</a>
+                    </div>
+                    <div class="col-md-3 text-right">
                         <a href="{{ route('books.create') }}" class="btn btn-warning">Add a new Book </a>
                     </div>
                 </div>
@@ -38,7 +41,7 @@
                                 <td>{{ $book->author_id }}</td>
                                 <td>
                                     <form action="{{ route('books.destroy', $book->id) }}" method="POST" class="d-inline">
-                                    <a href="{{ route('books.edit', $book->id) }}" class="btn btn-primary">Edit</a>
+                                    <a href="{{ route('books.edit', $book->id) }}" class="btn btn-success">Edit</a>
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure you want to delete this book?')">Delete</button>
